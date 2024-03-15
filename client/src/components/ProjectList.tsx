@@ -13,8 +13,8 @@ const ProjectList = () => {
   if (!data) return <p>No data</p>;
 
   return (
-    <div>
-      <h1>ProjectList</h1>
+    <div className="overflow-y-auto w-full px-5" >
+      <h1 className="font-bold text-2xl py-4" >Projects</h1>
       <ul>
         {data.projects.map((project: Project) => (
           <ProjectCard key={project._id} project={project} />

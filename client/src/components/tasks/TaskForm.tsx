@@ -1,6 +1,10 @@
 import { useMutation } from "@apollo/client";
 import { CREATE_TASK } from "../../graphql/tasks";
 import { useParams } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
 
 const TaskForm = () => {
   const [createTask] = useMutation(CREATE_TASK, {
@@ -23,10 +27,18 @@ const TaskForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="title" />
-      <button>Add</button>
-    </form>
+    <Card className="w-[350px]">
+      <CardHeader>
+        <CardTitle>Create a new task</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <form onSubmit={handleSubmit}>
+          <Label htmlFor="title">Name</Label>
+          <Input type="text" name="title" id="title" />
+          <Button>Add</Button>
+        </form>
+      </CardContent>
+    </Card>
   );
 };
 

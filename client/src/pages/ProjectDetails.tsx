@@ -5,6 +5,7 @@ import { Project } from "../interfaces/projects";
 import TaskList from "../components/tasks/TaskList";
 import { Task } from "../interfaces/tasks";
 import TaskForm from "../components/tasks/TaskForm";
+import { Button } from "@/components/ui/button";
 
 interface ProjectDetails extends Project {
   tasks: Task[];
@@ -28,7 +29,7 @@ const ProjectDetails = () => {
     <div>
       <h1>{data && data.project._id}</h1>
       <p>{data && data.project.description}</p>
-      <button>Delete</button>
+      <Button variant="destructive" >Delete</Button>
       <TaskForm />
       {/* <TaskForm projectId={id} /> */}
       <TaskList tasks={

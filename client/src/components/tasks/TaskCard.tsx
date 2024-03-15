@@ -1,6 +1,14 @@
 import { DELETE_TASK } from "../../graphql/tasks"
 import { Task } from "../../interfaces/tasks"
 import { useMutation } from "@apollo/client"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 
 const TaskCard : React.FC<{task : Task}> = ({ task }) => {
   
@@ -9,8 +17,11 @@ const TaskCard : React.FC<{task : Task}> = ({ task }) => {
   })
   
   return (
-    <div>
-      <h3>{task._id} {task.title}</h3>
+    <Card className="w-[350px]" >
+      <CardHeader>
+        <CardTitle> {task.title} </CardTitle>
+        {/* <h3>{task._id} {task.title}</h3> */}
+      </CardHeader>
       <button
       onClick={() => {
         deleteTask(
@@ -18,7 +29,7 @@ const TaskCard : React.FC<{task : Task}> = ({ task }) => {
         )
       }}
       >Delete</button>
-    </div>
+    </Card>
   )
 }
 
