@@ -3,12 +3,10 @@ import { Task } from "../../interfaces/tasks"
 import { useMutation } from "@apollo/client"
 import {
   Card,
-  CardContent,
   CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
+  CardHeader
 } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 
 const TaskCard : React.FC<{task : Task}> = ({ task }) => {
   
@@ -17,18 +15,18 @@ const TaskCard : React.FC<{task : Task}> = ({ task }) => {
   })
   
   return (
-    <Card className="w-[350px]" >
+    <Card className="w-full flex flex-row items-center justify-between px-4 my-2 pr-8" >
       <CardHeader>
-        <CardTitle> {task.title} </CardTitle>
-        {/* <h3>{task._id} {task.title}</h3> */}
+        <CardDescription>{task.title}</CardDescription>
       </CardHeader>
-      <button
+      <Button
       onClick={() => {
         deleteTask(
           {variables : {id : task._id}}
         )
       }}
-      >Delete</button>
+      variant="destructive"
+      >Delete</Button>
     </Card>
   )
 }

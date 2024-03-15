@@ -27,7 +27,7 @@ const TaskForm = () => {
   };
 
   return (
-    <Card className="w-[350px]">
+    <Card className="w-full lg:px-12 lg:py-8">
       <CardHeader>
         <CardTitle>Create a new task</CardTitle>
       </CardHeader>
@@ -35,7 +35,9 @@ const TaskForm = () => {
         <form onSubmit={handleSubmit}>
           <Label htmlFor="title">Name</Label>
           <Input type="text" name="title" id="title" />
-          <Button>Add</Button>
+          <Button
+            className="w-full mt-2"
+          >Add</Button>
         </form>
       </CardContent>
     </Card>
