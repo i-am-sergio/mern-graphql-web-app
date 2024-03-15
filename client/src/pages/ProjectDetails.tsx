@@ -28,7 +28,7 @@ const ProjectDetails = () => {
   return (
     <div className="flex flex-col px-5 py-5 sm:px-32 lg:px-48">
       <div className="py-2 w-full">
-        <Button className="w-1/5"
+        <Button className="w-1/2 sm:w-1/5"
           onClick={
             () => {
               navigate("/projects")
